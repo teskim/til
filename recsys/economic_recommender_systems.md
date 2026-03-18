@@ -3,6 +3,9 @@
 - 한 줄 요약: price sensitivity를 고려하면 interest를 높힐수 있다.
 - 날짜: 2026-03-17
 
+- 한 줄 요약: utility modeling은 유저는 가격대비 효용이 가장 높은 것을 구매한다는 가정으로 효용성을 모델링할수 있다. 구매한 제품의 갯수, 대체제, 보완재에 따라서 모델링할 수 있다.
+- 날짜: 2026-03-18
+
 ## Introduction
 
 ESRS에서는 5가지 관점을 고려한다.
@@ -28,3 +31,9 @@ Matrix Factorization은 user-item dot product을 통해 item을 추천하는것.
   - price를 피처로 추가했더니 성능이 올랐다.
 ### 후처리
 price sensitivity를 score로 두고, interest와 price sensitivity를 고려한다.
+
+## Economic Utility Modeling Methods
+- 효용이라는건 추상적이다. Ranking model의 score를 utility로 볼수도 있다. utility_user_item
+- 상품의 속성별로 효용성을 나눠볼수도 있다. sum_attribute(impartance_user_attribute * utility_item_attribute)
+- 구매한 횟수에 따라서 상품의 효용성이 달라지기도 한다. 컴퓨터는 한번 구매하면 새로운 컴퓨터에 대한 효용성이 더 커지지 않는다. 기저귀는 갯수가 늘어날수록 효용성이 커진다.
+- 상품간의 관계도 있다. 보완제 대체제에 따라서 효용성이 달라진다 이를 모델링 하기도 한다.
