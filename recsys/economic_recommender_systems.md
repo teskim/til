@@ -6,6 +6,9 @@
 - 한 줄 요약: utility modeling은 유저는 가격대비 효용이 가장 높은 것을 구매한다는 가정으로 효용성을 모델링할수 있다. 구매한 제품의 갯수, 대체제, 보완재에 따라서 모델링할 수 있다.
 - 날짜: 2026-03-18
 
+- 한 줄 요약: profitablity는 플랫폼 수익성과 유저의 연관성을 잘 밸런싱하는것이 중요하다.
+- 날짜: 2026-03-19
+
 ## Introduction
 
 ESRS에서는 5가지 관점을 고려한다.
@@ -37,3 +40,14 @@ price sensitivity를 score로 두고, interest와 price sensitivity를 고려한
 - 상품의 속성별로 효용성을 나눠볼수도 있다. sum_attribute(impartance_user_attribute * utility_item_attribute)
 - 구매한 횟수에 따라서 상품의 효용성이 달라지기도 한다. 컴퓨터는 한번 구매하면 새로운 컴퓨터에 대한 효용성이 더 커지지 않는다. 기저귀는 갯수가 늘어날수록 효용성이 커진다.
 - 상품간의 관계도 있다. 보완제 대체제에 따라서 효용성이 달라진다 이를 모델링 하기도 한다.
+
+## Profit Aware Method
+### Modeling
+- 이익을 통해 추천모델을 고도화. Pareto optimization으로 CTR, GMV를 모두 최적화하는 방법도 있음
+- 대부분 전통적인 방식이고, 실제 우리랑 관련이 커보이지 않는다.
+
+### Postprocessing -> user interest와 profit이 적절히 밸런싱 되어야함.
+- pCTCVR*V(item)은 relevance가 심하게 깨지진 않지만, 2개의 밸런싱을 찾기가 어려움. 
+  - 내생각에는 가격차이가 심한 상품은 비싼게 높게 랭킹될 가능성이 있음.
+  - the organization could risk losing loyal customers should they feel dissatisfied with overly biased recommendations toward higher-value items and decide to leave the platform.
+- 구매할 확률이 어느정도 높은것 + 가격이 어느정도 낮은것에 대해서 sum(v)를 맞춘다.
