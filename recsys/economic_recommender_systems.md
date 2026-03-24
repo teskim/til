@@ -12,6 +12,9 @@
 - 한 줄 요약: 추천의 형태가 바뀌기도 한다. 할인율을 정할수도 묶음추천으로 확장하여 AOV를 늘리기도 한다. LTV를 예측하기도 한다.
 - 날짜: 2026-03-24(1)
 
+- 한 줄 요약: 추천으로 수익성을 내기 위해서는 연관성과 tradeoff가 발생한다. 하지만 추천의 신뢰도가 올라갈수록 구매할 확률이 올라가긴 할것 이다.
+- 날짜: 2026-03-24(2)
+
 ## Introduction
 
 ESRS에서는 5가지 관점을 고려한다.
@@ -59,3 +62,10 @@ price sensitivity를 score로 두고, interest와 price sensitivity를 고려한
 - 할인되는것을 추천 혹은 가격을 맞추는것에 대한 연구들이 있지만 실용적인지 검증이 되지 않음.
 - 묶음으로 판매하는 것은 연관된 묶음을 잘 추천하여 aov를 증가시킬수 있다.
 - LTV를 예측하는것도 있는데, 결국 추천퀄리티가 좋아야 그만큼 수익성있는것을 추천할때 효과가 좋다는 직관도 있다.
+
+# Evaluation
+## Offline eval
+- profit@k, pNDCG@k, expectedProfit@k 이런걸 주로 본다고 함.
+
+# Future work
+- Profitability - recommendation 의 퀄리티는 purchase propensity가 연관있다. Profit과 relevance간에 밸랜스가 중요하다
